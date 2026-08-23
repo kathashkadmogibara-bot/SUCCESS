@@ -1,6 +1,6 @@
-/* =========================================
+/* =====================================================
    RESET
-========================================= */
+===================================================== */
 
 * {
     margin: 0;
@@ -24,9 +24,9 @@ body {
 }
 
 
-/* =========================================
+/* =====================================================
    COVER
-========================================= */
+===================================================== */
 
 .cover {
 
@@ -34,10 +34,10 @@ body {
 
     background:
         linear-gradient(
-            rgba(15, 20, 30, 0.68),
-            rgba(15, 20, 30, 0.72)
+            rgba(15, 20, 30, 0.70),
+            rgba(15, 20, 30, 0.75)
         ),
-        url("https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=2000&q=85");
+        url("images/success.jpg");
 
     background-size: cover;
 
@@ -52,16 +52,14 @@ body {
     text-align: center;
 
     color: white;
-
-    position: relative;
 }
 
 
 .cover-overlay {
 
-    width: 90%;
+    width: 92%;
 
-    max-width: 900px;
+    max-width: 950px;
 
     padding: 50px 20px;
 }
@@ -69,7 +67,7 @@ body {
 
 .book-label {
 
-    font-size: 14px;
+    font-size: 13px;
 
     letter-spacing: 4px;
 
@@ -83,9 +81,9 @@ body {
 
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(60px, 10vw, 115px);
+    font-size: clamp(60px, 11vw, 125px);
 
-    line-height: 1.05;
+    line-height: 1;
 
     font-weight: 700;
 }
@@ -95,15 +93,15 @@ body {
 
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(25px, 4vw, 48px);
+    font-size: clamp(25px, 4vw, 50px);
 
     font-weight: 400;
 
-    margin-top: 20px;
+    margin-top: 22px;
 }
 
 
-.line {
+.cover-line {
 
     width: 100px;
 
@@ -127,9 +125,9 @@ body {
 
     margin-top: 40px;
 
-    padding: 12px 28px;
+    padding: 13px 30px;
 
-    border: 1px solid rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.85);
 
     border-radius: 50px;
 
@@ -137,7 +135,7 @@ body {
 
     text-decoration: none;
 
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 
@@ -147,29 +145,33 @@ body {
 
     color: #222;
 
-    transform: translateY(-3px);
+    transform: translateY(-4px);
 }
 
 
-/* =========================================
-   MAIN CONTAINER
-========================================= */
+/* =====================================================
+   MAIN
+===================================================== */
 
 .container {
 
-    width: min(1100px, 92%);
+    width: min(1150px, 92%);
 
     margin: auto;
 }
 
 
-/* =========================================
-   CHAPTER INTRO
-========================================= */
+/* =====================================================
+   INTRO
+===================================================== */
 
 .chapter-intro {
 
-    padding: 100px 0 55px;
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 110px 0 55px;
 }
 
 
@@ -185,27 +187,19 @@ body {
 }
 
 
-.chapter-intro h2,
-.chapter-section h2,
-.final-section h2,
-.ending h2 {
+.chapter-intro h2 {
 
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(30px, 5vw, 48px);
+    font-size: clamp(35px, 5vw, 52px);
 
-    line-height: 1.35;
+    line-height: 1.3;
 
-    margin: 12px 0 25px;
-
-    color: #202020;
+    margin: 15px 0 28px;
 }
 
 
-.chapter-intro p,
-.chapter-section p,
-.final-section p,
-.ending p {
+.chapter-intro p {
 
     font-size: 18px;
 
@@ -213,21 +207,24 @@ body {
 }
 
 
-/* =========================================
+/* =====================================================
    WIDE IMAGE
-========================================= */
+===================================================== */
 
 .wide-image {
 
     width: 100%;
 
-    height: 430px;
+    height: 460px;
 
     overflow: hidden;
 
-    border-radius: 20px;
+    border-radius: 24px;
 
-    margin: 30px 0 90px;
+    margin: 25px 0 100px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.12);
 }
 
 
@@ -239,37 +236,98 @@ body {
 
     object-fit: cover;
 
-    transition: transform 0.6s ease;
+    transition: transform 0.7s ease;
 }
 
 
 .wide-image:hover img {
 
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
 
 
-/* =========================================
-   CHAPTER SECTIONS
-========================================= */
+/* =====================================================
+   CHAPTER IMAGE + TEXT
+===================================================== */
 
 .chapter-section {
 
-    max-width: 850px;
+    display: grid;
 
-    margin: 0 auto;
+    grid-template-columns: 0.9fr 1.1fr;
 
-    padding: 55px 0;
+    gap: 65px;
+
+    align-items: center;
+
+    padding: 70px 0;
 }
 
 
-.chapter-section h2 {
+.chapter-section.reverse {
 
-    font-size: clamp(28px, 4vw, 40px);
+    grid-template-columns: 1.1fr 0.9fr;
 }
 
 
-.chapter-section h2::after {
+.chapter-section.reverse .section-image {
+
+    order: 2;
+}
+
+
+.chapter-section.reverse .section-text {
+
+    order: 1;
+}
+
+
+.section-image {
+
+    width: 100%;
+
+    height: 380px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.10);
+}
+
+
+.section-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.section-image:hover img {
+
+    transform: scale(1.06);
+}
+
+
+.section-text h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(29px, 4vw, 42px);
+
+    line-height: 1.3;
+
+    margin-bottom: 25px;
+}
+
+
+.section-text h2::after {
 
     content: "";
 
@@ -281,73 +339,81 @@ body {
 
     background: #876a38;
 
-    margin-top: 15px;
+    margin-top: 16px;
 }
 
 
-/* =========================================
+.section-text p {
+
+    font-size: 17px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =====================================================
    QUOTE
-========================================= */
+===================================================== */
 
 .quote {
 
+    max-width: 900px;
+
     margin: 70px auto;
 
-    max-width: 850px;
-
-    padding: 35px 40px;
+    padding: 40px;
 
     background: #e9dfca;
 
     border-left: 5px solid #876a38;
 
+    text-align: center;
+
     font-family: "Playfair Display", serif;
 
-    font-size: 25px;
+    font-size: 26px;
 
-    font-weight: 600;
-
-    text-align: center;
+    line-height: 1.6;
 }
 
 
 .quote span {
 
-    font-size: 45px;
+    font-size: 50px;
 
     color: #876a38;
 }
 
 
-/* =========================================
+/* =====================================================
    PEOPLE SECTION
-========================================= */
+===================================================== */
 
 .people-section {
 
-    padding: 100px 0;
+    padding: 120px 0 80px;
 }
 
 
 .section-heading {
 
+    max-width: 800px;
+
+    margin: 0 auto 65px;
+
     text-align: center;
-
-    max-width: 780px;
-
-    margin: 0 auto 60px;
 }
 
 
-.section-heading span {
+.section-heading > span {
 
     color: #876a38;
 
+    font-size: 14px;
+
     font-weight: 700;
 
-    letter-spacing: 3px;
-
-    font-size: 14px;
+    letter-spacing: 4px;
 }
 
 
@@ -355,41 +421,44 @@ body {
 
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(32px, 5vw, 50px);
+    font-size: clamp(35px, 5vw, 55px);
 
-    margin: 10px 0 15px;
+    margin: 12px 0 20px;
 }
 
 
 .section-heading p {
 
     font-size: 18px;
+
+    margin-bottom: 12px;
 }
 
 
-/* =========================================
+/* =====================================================
    PEOPLE GRID
-========================================= */
+===================================================== */
 
 .people-grid {
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-    gap: 28px;
+    gap: 30px;
 }
 
 
-/* =========================================
+/* =====================================================
    PERSON CARD
-========================================= */
+===================================================== */
 
 .person-card {
 
-    background: white;
+    background: #ffffff;
 
-    border-radius: 18px;
+    border-radius: 20px;
 
     overflow: hidden;
 
@@ -397,17 +466,17 @@ body {
         0 10px 35px rgba(0,0,0,0.08);
 
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
 
 .person-card:hover {
 
-    transform: translateY(-8px);
+    transform: translateY(-9px);
 
     box-shadow:
-        0 20px 45px rgba(0,0,0,0.14);
+        0 20px 50px rgba(0,0,0,0.15);
 }
 
 
@@ -415,17 +484,25 @@ body {
 
     width: 100%;
 
-    height: 260px;
+    height: 270px;
 
     object-fit: cover;
 
     display: block;
+
+    transition: transform 0.5s ease;
+}
+
+
+.person-card:hover img {
+
+    transform: scale(1.04);
 }
 
 
 .person-content {
 
-    padding: 25px;
+    padding: 26px;
 }
 
 
@@ -433,9 +510,11 @@ body {
 
     font-family: "Playfair Display", serif;
 
-    font-size: 25px;
+    font-size: 27px;
 
-    margin-bottom: 5px;
+    line-height: 1.3;
+
+    margin-bottom: 7px;
 }
 
 
@@ -443,35 +522,51 @@ body {
 
     color: #876a38;
 
-    font-size: 15px;
+    font-size: 14px;
 
-    margin-bottom: 14px;
+    line-height: 1.5;
 
-    font-weight: 600;
+    margin-bottom: 15px;
+
+    font-weight: 700;
 }
 
 
 .person-content p {
 
-    font-size: 16px;
+    color: #555;
+
+    font-size: 15.5px;
 
     line-height: 1.8;
 
-    color: #555;
+    margin-bottom: 12px;
 }
 
 
-/* =========================================
+/* =====================================================
+   FINAL LEARNING
+===================================================== */
+
+.final-learning {
+
+    max-width: 900px;
+
+    margin: 60px auto;
+}
+
+
+/* =====================================================
    FINAL SECTION
-========================================= */
+===================================================== */
 
 .final-section {
 
-    max-width: 850px;
+    max-width: 900px;
 
-    margin: 70px auto;
+    margin: 80px auto;
 
-    padding: 65px 0;
+    padding: 70px 0;
 
     border-top: 1px solid #d5cdbd;
 }
@@ -481,66 +576,95 @@ body {
 
     color: #876a38;
 
+    font-size: 14px;
+
     font-weight: 700;
 
-    letter-spacing: 3px;
-
-    font-size: 14px;
+    letter-spacing: 4px;
 }
 
 
-/* =========================================
+.final-section h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(34px, 5vw, 50px);
+
+    margin: 15px 0 25px;
+}
+
+
+.final-section p {
+
+    font-size: 18px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =====================================================
    ENDING
-========================================= */
+===================================================== */
 
 .ending {
 
-    margin: 80px 0 100px;
+    margin: 90px 0 110px;
 
-    padding: 70px 40px;
+    padding: 80px 45px;
 
     background:
         linear-gradient(
             135deg,
             #292929,
-            #111
+            #101010
         );
 
     color: white;
 
-    border-radius: 25px;
+    border-radius: 26px;
 
     text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.15);
 }
 
 
 .ending h2 {
 
+    font-family: "Playfair Display", serif;
+
     color: white;
+
+    font-size: clamp(32px, 5vw, 52px);
+
+    margin-bottom: 25px;
 }
 
 
-.ending p {
+.ending > p {
 
-    max-width: 750px;
+    max-width: 780px;
 
-    margin: 0 auto 30px;
+    margin: auto;
 
-    color: #e0e0e0;
+    color: #dddddd;
+
+    font-size: 18px;
 }
 
 
 .final-quote {
 
-    max-width: 750px;
+    max-width: 800px;
 
-    margin: 35px auto 0;
+    margin: 40px auto 0;
 
-    padding: 25px;
+    padding: 30px 20px;
 
-    border-top: 1px solid #777;
+    border-top: 1px solid #666;
 
-    border-bottom: 1px solid #777;
+    border-bottom: 1px solid #666;
 
     font-family: "Playfair Display", serif;
 
@@ -550,9 +674,9 @@ body {
 }
 
 
-/* =========================================
+/* =====================================================
    FOOTER
-========================================= */
+===================================================== */
 
 footer {
 
@@ -562,7 +686,7 @@ footer {
 
     text-align: center;
 
-    padding: 50px 20px;
+    padding: 55px 20px;
 }
 
 
@@ -576,7 +700,7 @@ footer h2 {
 
 footer p {
 
-    color: #bbb;
+    color: #bbbbbb;
 }
 
 
@@ -588,78 +712,102 @@ footer .copyright {
 }
 
 
-/* =========================================
+/* =====================================================
    TABLET
-========================================= */
+===================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 
     .people-grid {
 
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
 
+
+    .chapter-section,
+    .chapter-section.reverse {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .chapter-section.reverse .section-image,
+    .chapter-section.reverse .section-text {
+
+        order: initial;
+    }
+
+
+    .section-image {
+
+        height: 360px;
     }
 
 }
 
 
-/* =========================================
+/* =====================================================
    MOBILE
-========================================= */
+===================================================== */
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
     body {
 
-        line-height: 1.8;
-
+        line-height: 1.75;
     }
 
 
     .cover {
 
-        min-height: 90vh;
-
+        min-height: 92vh;
     }
 
 
     .cover-overlay {
 
         padding: 30px 15px;
-
     }
 
 
     .book-label {
 
-        font-size: 11px;
+        font-size: 10px;
 
         letter-spacing: 2px;
+    }
 
+
+    .cover h1 {
+
+        font-size: 62px;
+    }
+
+
+    .cover h2 {
+
+        font-size: 27px;
     }
 
 
     .author {
 
         font-size: 17px;
-
     }
 
 
     .chapter-intro {
 
-        padding-top: 65px;
-
+        padding: 70px 0 40px;
     }
 
 
-    .chapter-intro p,
-    .chapter-section p,
-    .final-section p,
-    .ending p {
+    .chapter-intro p {
 
         font-size: 16px;
-
     }
 
 
@@ -667,33 +815,63 @@ footer .copyright {
 
         height: 280px;
 
-        border-radius: 14px;
+        border-radius: 16px;
 
-        margin-bottom: 50px;
-
+        margin-bottom: 55px;
     }
 
 
     .chapter-section {
 
-        padding: 35px 0;
+        padding: 45px 0;
+    }
 
+
+    .section-image {
+
+        height: 270px;
+
+        border-radius: 17px;
+    }
+
+
+    .section-text h2 {
+
+        font-size: 29px;
+    }
+
+
+    .section-text p {
+
+        font-size: 16px;
     }
 
 
     .quote {
 
-        padding: 25px 20px;
+        padding: 30px 20px;
 
         font-size: 20px;
 
+        margin: 50px auto;
     }
 
 
     .people-section {
 
-        padding: 65px 0;
+        padding: 70px 0 50px;
+    }
 
+
+    .section-heading h2 {
+
+        font-size: 35px;
+    }
+
+
+    .section-heading p {
+
+        font-size: 16px;
     }
 
 
@@ -701,33 +879,61 @@ footer .copyright {
 
         grid-template-columns: 1fr;
 
-        gap: 22px;
-
+        gap: 24px;
     }
 
 
     .person-card img {
 
-        height: 240px;
-
+        height: 260px;
     }
 
 
     .person-content {
 
-        padding: 22px;
+        padding: 23px;
+    }
 
+
+    .person-content h3 {
+
+        font-size: 25px;
+    }
+
+
+    .person-content p {
+
+        font-size: 15.5px;
+    }
+
+
+    .final-section {
+
+        padding: 55px 0;
+
+        margin: 50px auto;
+    }
+
+
+    .final-section p {
+
+        font-size: 16px;
     }
 
 
     .ending {
 
-        margin: 50px 0 70px;
+        margin: 55px 0 70px;
 
-        padding: 45px 20px;
+        padding: 55px 20px;
 
         border-radius: 18px;
+    }
 
+
+    .ending > p {
+
+        font-size: 16px;
     }
 
 
@@ -735,6 +941,13 @@ footer .copyright {
 
         font-size: 18px;
 
+        padding: 25px 10px;
+    }
+
+
+    footer {
+
+        padding: 45px 20px;
     }
 
 }
