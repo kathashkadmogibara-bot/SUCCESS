@@ -1,6 +1,6 @@
-/* =====================================================
+/* =========================
    RESET
-===================================================== */
+========================= */
 
 * {
     margin: 0;
@@ -8,126 +8,102 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-    background: #f5f1e8;
-    color: #252525;
-
     font-family: "Inter", sans-serif;
-
-    line-height: 1.85;
+    background: #f5f1e8;
+    color: #222;
+    line-height: 1.8;
 }
 
 
-/* =====================================================
+/* =========================
    COVER
-===================================================== */
+========================= */
 
 .cover {
-
     min-height: 100vh;
 
     background:
         linear-gradient(
-            rgba(15, 20, 30, 0.70),
-            rgba(15, 20, 30, 0.75)
+            rgba(20, 20, 20, 0.55),
+            rgba(20, 20, 20, 0.72)
         ),
         url("images/success.jpg");
 
     background-size: cover;
-
     background-position: center;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
 
     color: white;
+
+    padding: 30px;
 }
 
 
 .cover-overlay {
-
-    width: 92%;
-
-    max-width: 950px;
-
-    padding: 50px 20px;
+    max-width: 800px;
 }
 
 
 .book-label {
-
     font-size: 13px;
-
-    letter-spacing: 4px;
-
+    letter-spacing: 5px;
     margin-bottom: 25px;
-
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 
 .cover h1 {
-
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(60px, 11vw, 125px);
+    font-size: clamp(60px, 12vw, 120px);
 
     line-height: 1;
-
-    font-weight: 700;
 }
 
 
 .cover h2 {
-
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(25px, 4vw, 50px);
+    font-size: clamp(25px, 5vw, 48px);
 
-    font-weight: 400;
+    font-weight: 600;
 
-    margin-top: 22px;
+    margin-top: 15px;
 }
 
 
 .cover-line {
-
     width: 100px;
-
     height: 3px;
 
     background: white;
 
-    margin: 35px auto;
+    margin: 30px auto;
 }
 
 
 .author {
-
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 35px;
 }
 
 
 .start-btn {
-
     display: inline-block;
 
-    margin-top: 40px;
+    padding: 14px 30px;
 
-    padding: 13px 30px;
-
-    border: 1px solid rgba(255,255,255,0.85);
+    border: 1px solid white;
 
     border-radius: 50px;
 
@@ -135,348 +111,232 @@ body {
 
     text-decoration: none;
 
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 
 .start-btn:hover {
-
     background: white;
-
     color: #222;
-
-    transform: translateY(-4px);
 }
 
 
-/* =====================================================
-   MAIN
-===================================================== */
+/* =========================
+   BOOK
+========================= */
 
-.container {
-
-    width: min(1150px, 92%);
+.book {
+    width: min(1100px, 92%);
 
     margin: auto;
 }
 
 
-/* =====================================================
-   INTRO
-===================================================== */
+/* =========================
+   CHAPTER
+========================= */
 
-.chapter-intro {
+.chapter {
+    min-height: 100vh;
 
-    max-width: 900px;
+    padding: 100px 0;
 
-    margin: auto;
+    border-bottom: 1px solid #ddd;
 
-    padding: 110px 0 55px;
+    scroll-margin-top: 30px;
 }
 
 
-.chapter-number {
+.chapter-top {
+    text-align: center;
 
-    color: #876a38;
+    max-width: 800px;
 
-    font-size: 14px;
+    margin: auto auto 50px;
+}
+
+
+.chapter-top span {
+    font-size: 13px;
+
+    letter-spacing: 4px;
 
     font-weight: 700;
 
-    letter-spacing: 3px;
+    color: #8a6a35;
 }
 
 
-.chapter-intro h2 {
-
+.chapter-top h2 {
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(35px, 5vw, 52px);
+    font-size: clamp(35px, 6vw, 65px);
 
-    line-height: 1.3;
+    line-height: 1.2;
 
-    margin: 15px 0 28px;
+    margin: 15px 0;
 }
 
 
-.chapter-intro p {
+.chapter-intro {
+    font-size: 20px;
 
-    font-size: 18px;
-
-    margin-bottom: 20px;
+    color: #666;
 }
 
 
-/* =====================================================
-   WIDE IMAGE
-===================================================== */
+/* =========================
+   IMAGES
+========================= */
 
-.wide-image {
-
+.chapter-image {
     width: 100%;
 
-    height: 460px;
+    margin: 40px auto;
 
     overflow: hidden;
 
     border-radius: 24px;
 
-    margin: 25px 0 100px;
-
-    box-shadow:
-        0 15px 45px rgba(0,0,0,0.12);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
 
-.wide-image img {
-
+.chapter-image img {
     width: 100%;
 
-    height: 100%;
+    height: 500px;
 
     object-fit: cover;
-
-    transition: transform 0.7s ease;
-}
-
-
-.wide-image:hover img {
-
-    transform: scale(1.05);
-}
-
-
-/* =====================================================
-   CHAPTER IMAGE + TEXT
-===================================================== */
-
-.chapter-section {
-
-    display: grid;
-
-    grid-template-columns: 0.9fr 1.1fr;
-
-    gap: 65px;
-
-    align-items: center;
-
-    padding: 70px 0;
-}
-
-
-.chapter-section.reverse {
-
-    grid-template-columns: 1.1fr 0.9fr;
-}
-
-
-.chapter-section.reverse .section-image {
-
-    order: 2;
-}
-
-
-.chapter-section.reverse .section-text {
-
-    order: 1;
-}
-
-
-.section-image {
-
-    width: 100%;
-
-    height: 380px;
-
-    overflow: hidden;
-
-    border-radius: 22px;
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,0.10);
-}
-
-
-.section-image img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: transform 0.6s ease;
-}
-
-
-.section-image:hover img {
-
-    transform: scale(1.06);
-}
-
-
-.section-text h2 {
-
-    font-family: "Playfair Display", serif;
-
-    font-size: clamp(29px, 4vw, 42px);
-
-    line-height: 1.3;
-
-    margin-bottom: 25px;
-}
-
-
-.section-text h2::after {
-
-    content: "";
 
     display: block;
 
-    width: 65px;
-
-    height: 3px;
-
-    background: #876a38;
-
-    margin-top: 16px;
+    transition: transform 0.5s;
 }
 
 
-.section-text p {
-
-    font-size: 17px;
-
-    margin-bottom: 18px;
+.chapter-image:hover img {
+    transform: scale(1.03);
 }
 
 
-/* =====================================================
-   QUOTE
-===================================================== */
-
-.quote {
-
-    max-width: 900px;
-
-    margin: 70px auto;
-
-    padding: 40px;
-
-    background: #e9dfca;
-
-    border-left: 5px solid #876a38;
-
-    text-align: center;
-
-    font-family: "Playfair Display", serif;
-
-    font-size: 26px;
-
-    line-height: 1.6;
+.second-image {
+    margin-top: 60px;
 }
 
 
-.quote span {
+/* =========================
+   TEXT
+========================= */
 
-    font-size: 50px;
-
-    color: #876a38;
-}
-
-
-/* =====================================================
-   PEOPLE SECTION
-===================================================== */
-
-.people-section {
-
-    padding: 120px 0 80px;
-}
-
-
-.section-heading {
-
+.chapter-text {
     max-width: 800px;
 
-    margin: 0 auto 65px;
-
-    text-align: center;
+    margin: auto;
 }
 
 
-.section-heading > span {
-
-    color: #876a38;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    letter-spacing: 4px;
-}
-
-
-.section-heading h2 {
-
-    font-family: "Playfair Display", serif;
-
-    font-size: clamp(35px, 5vw, 55px);
-
-    margin: 12px 0 20px;
-}
-
-
-.section-heading p {
-
+.chapter-text p {
     font-size: 18px;
 
-    margin-bottom: 12px;
+    margin-bottom: 25px;
+
+    color: #444;
 }
 
 
-/* =====================================================
-   PEOPLE GRID
-===================================================== */
+/* =========================
+   GREAT PEOPLE
+========================= */
 
-.people-grid {
+.great-people {
+    padding: 110px 0;
 
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 30px;
+    scroll-margin-top: 30px;
 }
 
 
-/* =====================================================
-   PERSON CARD
-===================================================== */
+.people-heading {
+    text-align: center;
+
+    max-width: 750px;
+
+    margin: auto auto 60px;
+}
+
+
+.people-heading > span {
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    color: #8a6a35;
+
+    font-weight: 700;
+}
+
+
+.people-heading h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 7vw, 70px);
+
+    margin: 15px 0;
+}
+
+
+.people-heading p {
+    color: #666;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   PEOPLE SLIDER
+========================= */
+
+.people-slider {
+
+    display: flex;
+
+    overflow-x: auto;
+
+    gap: 25px;
+
+    scroll-snap-type: x mandatory;
+
+    padding: 20px 5px 35px;
+
+    scrollbar-width: thin;
+}
+
+
+.people-slider::-webkit-scrollbar {
+    height: 7px;
+}
+
 
 .person-card {
 
-    background: #ffffff;
+    flex: 0 0 330px;
 
-    border-radius: 20px;
+    background: white;
+
+    border-radius: 22px;
 
     overflow: hidden;
 
-    box-shadow:
-        0 10px 35px rgba(0,0,0,0.08);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
+    scroll-snap-align: center;
+
+    transition: 0.3s;
 }
 
 
 .person-card:hover {
-
-    transform: translateY(-9px);
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
 }
 
 
@@ -484,103 +344,73 @@ body {
 
     width: 100%;
 
-    height: 270px;
+    height: 300px;
 
     object-fit: cover;
 
     display: block;
-
-    transition: transform 0.5s ease;
 }
 
 
-.person-card:hover img {
+.person-card > div {
 
-    transform: scale(1.04);
+    padding: 25px;
 }
 
 
-.person-content {
-
-    padding: 26px;
-}
-
-
-.person-content h3 {
+.person-card h3 {
 
     font-family: "Playfair Display", serif;
 
-    font-size: 27px;
+    font-size: 28px;
 
-    line-height: 1.3;
-
-    margin-bottom: 7px;
+    margin-bottom: 5px;
 }
 
 
-.person-content h4 {
+.person-card h4 {
 
-    color: #876a38;
+    color: #8a6a35;
 
     font-size: 14px;
 
-    line-height: 1.5;
-
     margin-bottom: 15px;
-
-    font-weight: 700;
 }
 
 
-.person-content p {
+.person-card p {
 
     color: #555;
 
-    font-size: 15.5px;
-
-    line-height: 1.8;
-
-    margin-bottom: 12px;
+    font-size: 15px;
 }
 
 
-/* =====================================================
-   FINAL LEARNING
-===================================================== */
-
-.final-learning {
-
-    max-width: 900px;
-
-    margin: 60px auto;
-}
-
-
-/* =====================================================
+/* =========================
    FINAL SECTION
-===================================================== */
+========================= */
 
 .final-section {
 
-    max-width: 900px;
+    padding: 100px 20px;
 
-    margin: 80px auto;
+    text-align: center;
 
-    padding: 70px 0;
+    max-width: 850px;
 
-    border-top: 1px solid #d5cdbd;
+    margin: auto;
 }
 
 
-.final-section > span {
-
-    color: #876a38;
-
-    font-size: 14px;
-
-    font-weight: 700;
+.final-section span {
 
     letter-spacing: 4px;
+
+    color: #8a6a35;
+
+    font-size: 13px;
+
+    font-weight: 700;
 }
 
 
@@ -588,9 +418,9 @@ body {
 
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(34px, 5vw, 50px);
+    font-size: clamp(40px, 7vw, 70px);
 
-    margin: 15px 0 25px;
+    margin: 20px 0;
 }
 
 
@@ -598,35 +428,29 @@ body {
 
     font-size: 18px;
 
-    margin-bottom: 18px;
+    color: #555;
+
+    margin-bottom: 20px;
 }
 
 
-/* =====================================================
+/* =========================
    ENDING
-===================================================== */
+========================= */
 
 .ending {
 
-    margin: 90px 0 110px;
+    text-align: center;
 
-    padding: 80px 45px;
+    padding: 110px 20px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #292929,
-            #101010
-        );
+    background: #1e1e1e;
 
     color: white;
 
-    border-radius: 26px;
+    border-radius: 30px;
 
-    text-align: center;
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.15);
+    margin-bottom: 80px;
 }
 
 
@@ -634,9 +458,7 @@ body {
 
     font-family: "Playfair Display", serif;
 
-    color: white;
-
-    font-size: clamp(32px, 5vw, 52px);
+    font-size: clamp(35px, 6vw, 60px);
 
     margin-bottom: 25px;
 }
@@ -644,11 +466,11 @@ body {
 
 .ending > p {
 
-    max-width: 780px;
+    max-width: 750px;
 
     margin: auto;
 
-    color: #dddddd;
+    color: #ddd;
 
     font-size: 18px;
 }
@@ -656,37 +478,37 @@ body {
 
 .final-quote {
 
-    max-width: 800px;
+    max-width: 700px;
 
-    margin: 40px auto 0;
+    margin: 45px auto 0;
 
-    padding: 30px 20px;
+    padding: 25px;
 
-    border-top: 1px solid #666;
-
-    border-bottom: 1px solid #666;
+    border-left: 3px solid white;
 
     font-family: "Playfair Display", serif;
 
     font-size: 22px;
 
-    line-height: 1.8;
+    font-style: italic;
+
+    text-align: left;
 }
 
 
-/* =====================================================
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
 footer {
 
-    background: #171717;
+    text-align: center;
+
+    background: #111;
 
     color: white;
 
-    text-align: center;
-
-    padding: 55px 20px;
+    padding: 50px 20px;
 }
 
 
@@ -700,254 +522,83 @@ footer h2 {
 
 footer p {
 
-    color: #bbbbbb;
+    color: #aaa;
+
+    margin: 5px;
 }
 
 
-footer .copyright {
-
-    margin-top: 20px;
-
-    font-size: 13px;
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 950px) {
-
-    .people-grid {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-
-    .chapter-section,
-    .chapter-section.reverse {
-
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-    }
-
-
-    .chapter-section.reverse .section-image,
-    .chapter-section.reverse .section-text {
-
-        order: initial;
-    }
-
-
-    .section-image {
-
-        height: 360px;
-    }
-
-}
-
-
-/* =====================================================
+/* =========================
    MOBILE
-===================================================== */
+========================= */
 
-@media (max-width: 650px) {
-
-    body {
-
-        line-height: 1.75;
-    }
-
+@media (max-width: 700px) {
 
     .cover {
-
-        min-height: 92vh;
+        min-height: 90vh;
     }
 
 
-    .cover-overlay {
-
-        padding: 30px 15px;
+    .book {
+        width: 90%;
     }
 
 
-    .book-label {
-
-        font-size: 10px;
-
-        letter-spacing: 2px;
+    .chapter {
+        padding: 70px 0;
     }
 
 
-    .cover h1 {
-
-        font-size: 62px;
+    .chapter-image img {
+        height: 300px;
     }
 
 
-    .cover h2 {
-
-        font-size: 27px;
-    }
-
-
-    .author {
-
-        font-size: 17px;
-    }
-
-
-    .chapter-intro {
-
-        padding: 70px 0 40px;
-    }
-
-
-    .chapter-intro p {
-
+    .chapter-text p {
         font-size: 16px;
     }
 
 
-    .wide-image {
-
-        height: 280px;
-
-        border-radius: 16px;
-
-        margin-bottom: 55px;
-    }
-
-
-    .chapter-section {
-
-        padding: 45px 0;
-    }
-
-
-    .section-image {
-
-        height: 270px;
-
-        border-radius: 17px;
-    }
-
-
-    .section-text h2 {
-
-        font-size: 29px;
-    }
-
-
-    .section-text p {
-
-        font-size: 16px;
-    }
-
-
-    .quote {
-
-        padding: 30px 20px;
-
-        font-size: 20px;
-
-        margin: 50px auto;
-    }
-
-
-    .people-section {
-
-        padding: 70px 0 50px;
-    }
-
-
-    .section-heading h2 {
-
-        font-size: 35px;
-    }
-
-
-    .section-heading p {
-
-        font-size: 16px;
-    }
-
-
-    .people-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 24px;
+    .person-card {
+        flex-basis: 285px;
     }
 
 
     .person-card img {
-
         height: 260px;
     }
 
 
-    .person-content {
-
-        padding: 23px;
-    }
-
-
-    .person-content h3 {
-
-        font-size: 25px;
-    }
-
-
-    .person-content p {
-
-        font-size: 15.5px;
-    }
-
-
-    .final-section {
-
-        padding: 55px 0;
-
-        margin: 50px auto;
-    }
-
-
-    .final-section p {
-
-        font-size: 16px;
-    }
-
-
     .ending {
+        border-radius: 20px;
 
-        margin: 55px 0 70px;
-
-        padding: 55px 20px;
-
-        border-radius: 18px;
+        margin-bottom: 40px;
     }
 
+}
 
-    .ending > p {
 
-        font-size: 16px;
+/* =========================
+   TOUCH FRIENDLY
+========================= */
+
+.people-slider {
+
+    -webkit-overflow-scrolling: touch;
+
+    touch-action: pan-x;
+
+}
+
+
+@media (hover: none) {
+
+    .person-card:hover {
+        transform: none;
     }
 
-
-    .final-quote {
-
-        font-size: 18px;
-
-        padding: 25px 10px;
-    }
-
-
-    footer {
-
-        padding: 45px 20px;
+    .chapter-image:hover img {
+        transform: none;
     }
 
 }
