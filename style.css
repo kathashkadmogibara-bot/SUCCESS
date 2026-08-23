@@ -1,6 +1,6 @@
-/* =========================
-   RESET
-========================= */
+/* =====================================================
+   GLOBAL
+===================================================== */
 
 * {
     margin: 0;
@@ -14,73 +14,123 @@ html {
 
 body {
     font-family: "Inter", sans-serif;
-    background: #f5f1e8;
-    color: #222;
+    background: #eee9df;
+    color: #29251f;
     line-height: 1.8;
 }
 
 
-/* =========================
-   COVER
-========================= */
+/* =====================================================
+   TOP NAV
+===================================================== */
 
-.cover {
-    min-height: 100vh;
+.top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 5%;
+
+    background: rgba(30, 27, 23, 0.96);
+    color: white;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+}
+
+.nav-logo {
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.nav-book {
+    font-family: "Playfair Display", serif;
+}
+
+.nav-button {
+    text-decoration: none;
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 7px 14px;
+    border-radius: 30px;
+
+    transition: 0.3s;
+}
+
+.nav-button:hover {
+    background: white;
+    color: #29251f;
+}
+
+
+/* =====================================================
+   COVER
+===================================================== */
+
+.book-cover {
+    min-height: 92vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
 
     background:
         linear-gradient(
-            rgba(20, 20, 20, 0.55),
-            rgba(20, 20, 20, 0.72)
+            rgba(35,30,24,0.65),
+            rgba(35,30,24,0.78)
         ),
         url("images/success.jpg");
 
     background-size: cover;
     background-position: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
     color: white;
-
-    padding: 30px;
 }
 
-
-.cover-overlay {
-    max-width: 800px;
+.cover-content {
+    max-width: 850px;
 }
 
+.book-badge {
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 700;
 
-.book-label {
-    font-size: 13px;
-    letter-spacing: 5px;
     margin-bottom: 25px;
-    opacity: 0.85;
 }
 
+.book-icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
 
-.cover h1 {
+.book-cover h1 {
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(60px, 12vw, 120px);
+    font-size: clamp(55px, 10vw, 110px);
 
     line-height: 1;
 }
 
-
-.cover h2 {
+.book-cover h2 {
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(25px, 5vw, 48px);
-
-    font-weight: 600;
+    font-size: clamp(24px, 4vw, 44px);
 
     margin-top: 15px;
-}
 
+    font-weight: 600;
+}
 
 .cover-line {
     width: 100px;
@@ -91,39 +141,82 @@ body {
     margin: 30px auto;
 }
 
-
 .author {
     font-size: 18px;
-    margin-bottom: 35px;
 }
 
-
-.start-btn {
+.read-button {
     display: inline-block;
 
-    padding: 14px 30px;
+    margin-top: 30px;
+
+    padding: 14px 28px;
 
     border: 1px solid white;
+    border-radius: 40px;
 
-    border-radius: 50px;
+    text-decoration: none;
 
     color: white;
 
-    text-decoration: none;
+    font-weight: 700;
 
     transition: 0.3s;
 }
 
-
-.start-btn:hover {
+.read-button:hover {
     background: white;
-    color: #222;
+    color: #29251f;
+    transform: translateY(-3px);
 }
 
 
-/* =========================
+/* =====================================================
+   BOOK INFO
+===================================================== */
+
+.book-info {
+    width: min(1000px, 90%);
+
+    margin: 35px auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.book-info div {
+    background: white;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.book-info span {
+    display: block;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    color: #8c7b66;
+}
+
+.book-info strong {
+    display: block;
+
+    margin-top: 5px;
+}
+
+
+/* =====================================================
    BOOK
-========================= */
+===================================================== */
 
 .book {
     width: min(1100px, 92%);
@@ -132,473 +225,662 @@ body {
 }
 
 
-/* =========================
+/* =====================================================
    CHAPTER
-========================= */
+===================================================== */
 
 .chapter {
-    min-height: 100vh;
+    background: #fffdf8;
 
-    padding: 100px 0;
+    margin: 50px 0;
 
-    border-bottom: 1px solid #ddd;
+    padding: clamp(30px, 6vw, 75px);
 
-    scroll-margin-top: 30px;
+    border-radius: 8px;
+
+    box-shadow:
+        0 15px 45px rgba(45,35,25,0.12);
+
+    scroll-margin-top: 90px;
 }
 
+.chapter-label {
+    display: inline-block;
 
-.chapter-top {
-    text-align: center;
+    color: #94784e;
 
-    max-width: 800px;
+    font-size: 12px;
 
-    margin: auto auto 50px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
 }
 
-
-.chapter-top span {
-    font-size: 13px;
-
-    letter-spacing: 4px;
-
-    font-weight: 700;
-
-    color: #8a6a35;
-}
-
-
-.chapter-top h2 {
+.chapter h2,
+.people-section h2,
+.final-section h2,
+.ending h2 {
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(35px, 6vw, 65px);
+    font-size: clamp(32px, 5vw, 55px);
 
     line-height: 1.2;
 
-    margin: 15px 0;
+    margin-bottom: 28px;
+
+    color: #28231c;
+}
+
+.chapter p,
+.people-section > p,
+.final-section p,
+.ending p {
+    font-size: 17px;
+
+    margin-bottom: 22px;
+
+    color: #4b453c;
 }
 
 
-.chapter-intro {
-    font-size: 20px;
-
-    color: #666;
-}
-
-
-/* =========================
+/* =====================================================
    IMAGES
-========================= */
+===================================================== */
 
 .chapter-image {
+    position: relative;
+
     width: 100%;
 
-    margin: 40px auto;
+    margin: 35px 0;
 
     overflow: hidden;
 
-    border-radius: 24px;
+    border-radius: 15px;
 
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    background: #ddd;
+
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
 }
 
-
 .chapter-image img {
+    display: block;
+
     width: 100%;
 
-    height: 500px;
+    height: 390px;
 
     object-fit: cover;
 
-    display: block;
-
-    transition: transform 0.5s;
+    transition: transform 0.5s ease;
 }
-
 
 .chapter-image:hover img {
-    transform: scale(1.03);
+    transform: scale(1.04);
 }
 
+.chapter-image span {
+    position: absolute;
 
-.second-image {
-    margin-top: 60px;
-}
+    bottom: 0;
+    left: 0;
 
+    width: 100%;
 
-/* =========================
-   TEXT
-========================= */
+    padding: 14px 20px;
 
-.chapter-text {
-    max-width: 800px;
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.8)
+    );
 
-    margin: auto;
-}
+    color: white;
 
-
-.chapter-text p {
-    font-size: 18px;
-
-    margin-bottom: 25px;
-
-    color: #444;
-}
-
-
-/* =========================
-   GREAT PEOPLE
-========================= */
-
-.great-people {
-    padding: 110px 0;
-
-    scroll-margin-top: 30px;
-}
-
-
-.people-heading {
-    text-align: center;
-
-    max-width: 750px;
-
-    margin: auto auto 60px;
-}
-
-
-.people-heading > span {
     font-size: 13px;
 
-    letter-spacing: 4px;
-
-    color: #8a6a35;
-
     font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.large-image img {
+    height: 500px;
+}
+
+.small-image img {
+    height: 350px;
 }
 
 
-.people-heading h2 {
+/* =====================================================
+   TWO COLUMN
+===================================================== */
+
+.two-column {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px;
+
+    align-items: center;
+}
+
+.two-column .chapter-image {
+    margin: 0;
+}
+
+
+/* =====================================================
+   HIGHLIGHT
+===================================================== */
+
+.highlight-box {
+    margin: 40px 0;
+
+    padding: 30px;
+
+    background: #f3eee4;
+
+    border-left: 5px solid #a78a5e;
+
+    border-radius: 10px;
+}
+
+.highlight-box h3 {
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(40px, 7vw, 70px);
+    margin-bottom: 20px;
 
-    margin: 15px 0;
+    font-size: 25px;
 }
 
+.foundation-grid {
+    display: grid;
 
-.people-heading p {
-    color: #666;
+    grid-template-columns: repeat(5, 1fr);
 
-    font-size: 18px;
+    gap: 10px;
 }
 
-
-/* =========================
-   PEOPLE SLIDER
-========================= */
-
-.people-slider {
-
-    display: flex;
-
-    overflow-x: auto;
-
-    gap: 25px;
-
-    scroll-snap-type: x mandatory;
-
-    padding: 20px 5px 35px;
-
-    scrollbar-width: thin;
-}
-
-
-.people-slider::-webkit-scrollbar {
-    height: 7px;
-}
-
-
-.person-card {
-
-    flex: 0 0 330px;
+.foundation-grid div {
+    padding: 15px 8px;
 
     background: white;
 
-    border-radius: 22px;
+    text-align: center;
 
-    overflow: hidden;
+    border-radius: 10px;
 
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    font-size: 22px;
+}
 
-    scroll-snap-align: center;
+.foundation-grid strong {
+    display: block;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+.quote {
+    margin: 45px 0;
+
+    padding: 30px;
+
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(22px, 4vw, 32px);
+
+    font-style: italic;
+
+    color: #765f3e;
+
+    border-top: 1px solid #d7cbb8;
+    border-bottom: 1px solid #d7cbb8;
+}
+
+
+/* =====================================================
+   CHAPTER NAVIGATION
+===================================================== */
+
+.chapter-navigation {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 50px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #ddd3c3;
+}
+
+.chapter-navigation a {
+    text-decoration: none;
+
+    color: #5d4a30;
+
+    border: 1px solid #bca889;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    font-weight: 700;
 
     transition: 0.3s;
 }
 
+.chapter-navigation a:hover {
+    background: #5d4a30;
+
+    color: white;
+}
+
+
+/* =====================================================
+   GREAT PEOPLE
+===================================================== */
+
+.people-section {
+    margin: 80px 0;
+
+    padding: clamp(30px, 6vw, 70px);
+
+    background: #24201b;
+
+    color: white;
+
+    border-radius: 12px;
+
+    scroll-margin-top: 90px;
+}
+
+.people-section h2 {
+    color: white;
+}
+
+.people-section > p {
+    color: #d8d0c3;
+
+    max-width: 800px;
+}
+
+.section-intro {
+    margin-bottom: 40px;
+}
+
+
+/* =====================================================
+   PEOPLE GRID
+===================================================== */
+
+.people-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+.person-card {
+    overflow: hidden;
+
+    background: #fffdf8;
+
+    color: #29251f;
+
+    border-radius: 14px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
 
 .person-card:hover {
     transform: translateY(-8px);
+
+    box-shadow: 0 18px 40px rgba(0,0,0,0.3);
 }
 
-
 .person-card img {
+    display: block;
 
     width: 100%;
 
-    height: 300px;
+    height: 250px;
 
     object-fit: cover;
-
-    display: block;
 }
 
-
-.person-card > div {
-
-    padding: 25px;
+.person-content {
+    padding: 22px;
 }
 
-
-.person-card h3 {
-
+.person-content h3 {
     font-family: "Playfair Display", serif;
 
-    font-size: 28px;
+    font-size: 25px;
 
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
+.person-content h4 {
+    color: #92764d;
 
-.person-card h4 {
-
-    color: #8a6a35;
-
-    font-size: 14px;
+    font-size: 13px;
 
     margin-bottom: 15px;
 }
 
+.person-content p {
+    font-size: 14px;
 
-.person-card p {
+    line-height: 1.7;
 
-    color: #555;
-
-    font-size: 15px;
+    color: #5b554d;
 }
 
 
-/* =========================
+/* =====================================================
    FINAL SECTION
-========================= */
+===================================================== */
 
 .final-section {
+    margin: 50px 0;
 
-    padding: 100px 20px;
+    padding: clamp(35px, 6vw, 70px);
+
+    background: #d9c8aa;
+
+    border-radius: 12px;
 
     text-align: center;
 
-    max-width: 850px;
-
-    margin: auto;
+    scroll-margin-top: 90px;
 }
-
-
-.final-section span {
-
-    letter-spacing: 4px;
-
-    color: #8a6a35;
-
-    font-size: 13px;
-
-    font-weight: 700;
-}
-
-
-.final-section h2 {
-
-    font-family: "Playfair Display", serif;
-
-    font-size: clamp(40px, 7vw, 70px);
-
-    margin: 20px 0;
-}
-
 
 .final-section p {
+    max-width: 800px;
 
-    font-size: 18px;
-
-    color: #555;
-
-    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
-/* =========================
+/* =====================================================
    ENDING
-========================= */
+===================================================== */
 
 .ending {
+    margin: 50px 0 80px;
+
+    padding: clamp(35px, 7vw, 90px);
 
     text-align: center;
 
-    padding: 110px 20px;
-
-    background: #1e1e1e;
+    background:
+        linear-gradient(
+            rgba(25,22,19,0.92),
+            rgba(25,22,19,0.96)
+        );
 
     color: white;
 
-    border-radius: 30px;
-
-    margin-bottom: 80px;
+    border-radius: 12px;
 }
-
 
 .ending h2 {
-
-    font-family: "Playfair Display", serif;
-
-    font-size: clamp(35px, 6vw, 60px);
-
-    margin-bottom: 25px;
+    color: white;
 }
 
-
-.ending > p {
+.ending p {
+    color: #ddd5c8;
 
     max-width: 750px;
 
-    margin: auto;
-
-    color: #ddd;
-
-    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-
 .final-quote {
+    max-width: 750px;
 
-    max-width: 700px;
-
-    margin: 45px auto 0;
+    margin: 40px auto 0;
 
     padding: 25px;
 
-    border-left: 3px solid white;
+    border: 1px solid rgba(255,255,255,0.25);
+
+    border-radius: 12px;
 
     font-family: "Playfair Display", serif;
 
-    font-size: 22px;
+    font-size: clamp(19px, 3vw, 27px);
 
     font-style: italic;
-
-    text-align: left;
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer {
+    padding: 50px 20px;
 
     text-align: center;
 
-    background: #111;
+    background: #151310;
 
     color: white;
-
-    padding: 50px 20px;
 }
 
-
 footer h2 {
-
     font-family: "Playfair Display", serif;
 
     margin-bottom: 10px;
 }
 
-
 footer p {
+    color: #bdb6aa;
+}
 
-    color: #aaa;
+footer .copyright {
+    margin-top: 15px;
 
-    margin: 5px;
+    font-size: 12px;
+
+    letter-spacing: 1px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =====================================================
+   RESPONSIVE — TABLET
+===================================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 850px) {
 
-    .cover {
-        min-height: 90vh;
+    .people-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
+    .two-column {
+        grid-template-columns: 1fr;
+    }
 
-    .book {
+    .foundation-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .large-image img {
+        height: 400px;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE — MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        line-height: 1.7;
+    }
+
+    .top-nav {
+        padding: 11px 15px;
+    }
+
+    .nav-logo {
+        font-size: 13px;
+    }
+
+    .nav-book {
+        font-size: 12px;
+    }
+
+    .nav-button {
+        font-size: 11px;
+
+        padding: 6px 10px;
+    }
+
+    .book-cover {
+        min-height: 85vh;
+
+        padding: 40px 18px;
+    }
+
+    .book-cover h1 {
+        font-size: 58px;
+    }
+
+    .book-cover h2 {
+        font-size: 27px;
+    }
+
+    .book-info {
+        grid-template-columns: 1fr;
+
         width: 90%;
     }
 
+    .book {
+        width: 94%;
+    }
 
     .chapter {
-        padding: 70px 0;
+        padding: 27px 20px;
+
+        margin: 30px 0;
     }
 
-
-    .chapter-image img {
-        height: 300px;
+    .chapter h2,
+    .people-section h2,
+    .final-section h2,
+    .ending h2 {
+        font-size: 32px;
     }
 
-
-    .chapter-text p {
-        font-size: 16px;
+    .chapter p,
+    .people-section > p,
+    .final-section p,
+    .ending p {
+        font-size: 15px;
     }
 
-
-    .person-card {
-        flex-basis: 285px;
-    }
-
-
-    .person-card img {
+    .chapter-image img,
+    .large-image img,
+    .small-image img {
         height: 260px;
     }
 
+    .foundation-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
 
-    .ending {
-        border-radius: 20px;
+    .people-section {
+        padding: 25px 18px;
+    }
 
-        margin-bottom: 40px;
+    .people-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .person-card img {
+        height: 280px;
+    }
+
+    .chapter-navigation {
+        flex-wrap: wrap;
+    }
+
+    .chapter-navigation a {
+        flex: 1;
+
+        text-align: center;
+
+        min-width: 120px;
+    }
+
+    .quote {
+        font-size: 22px;
+
+        padding: 22px 10px;
     }
 
 }
 
 
-/* =========================
-   TOUCH FRIENDLY
-========================= */
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
 
-.people-slider {
+@media (max-width: 380px) {
 
-    -webkit-overflow-scrolling: touch;
-
-    touch-action: pan-x;
-
-}
-
-
-@media (hover: none) {
-
-    .person-card:hover {
-        transform: none;
+    .book-cover h1 {
+        font-size: 48px;
     }
 
-    .chapter-image:hover img {
-        transform: none;
+    .book-cover h2 {
+        font-size: 23px;
+    }
+
+    .chapter {
+        padding: 22px 15px;
+    }
+
+    .chapter h2,
+    .people-section h2,
+    .final-section h2,
+    .ending h2 {
+        font-size: 28px;
+    }
+
+    .foundation-grid {
+        grid-template-columns: 1fr;
     }
 
 }
