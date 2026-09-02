@@ -425,6 +425,20 @@ body {
     color: #4b453c;
 }
 
+.chapter h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    color: #28231c;
+    margin: 35px 0 15px;
+}
+
+.chapter h4 {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #765f3e;
+    margin: 25px 0 10px;
+    font-weight: 700;
+}
 
 /* =====================================================
    IMAGES
